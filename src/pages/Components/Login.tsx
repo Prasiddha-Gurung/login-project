@@ -30,8 +30,9 @@ export default function Login() {
             if (result.success) {
                 try {
                   await new Promise((resolve) => setTimeout(resolve, 1000)); 
+                  document.cookie = "name=loginToken; value=12345678 expires=Thu, 18 Dec 2013 12:00:00 UTC; path=/";
               
-                  router.push('/preference').catch((err)=> console.log(err)); 
+                  router.push('/preferences').catch((err)=> console.log(err)); 
                 } catch (error) {
              
                   alert('Login failed');

@@ -11,7 +11,6 @@ export const userRouter = createTRPCRouter({
         const user = await db.user.findUnique({
           where: { email: input.email },
         });
-        console.log('hereree')
   
         if (!user) {
           return { success: false, message: 'Login failed email not found', user };
